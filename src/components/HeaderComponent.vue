@@ -13,15 +13,21 @@ export default {
         }
     },
     created() {
-        axios.get(store.urlApiAllFilm).then((response) => {
-            store.allFilm = response.data.results;
-        })
+        this.searchFilm();
     },
     methods: {
         searchFilm() {
-            axios.get(store.urlApiSearchFilm + '&query=' + store.searchInput).then((response) => {
-                console.log(response);
-            })
+            if (store.searchInput !== '') {
+                axios.get(store.urlApiSearchFilm + '&query=' + store.searchInput).then((response) => {
+                    console.log(response);
+                    store.allFilm = response.data.results;
+                });
+            }
+            else {
+                axios.get(store.urlApiAllFilm).then((response) => {
+                    store.allFilm = response.data.results;
+                })
+            }
         }
     }
 }
