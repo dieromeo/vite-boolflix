@@ -1,27 +1,15 @@
 <script>
-import SearchBar from './components/SearchBar.vue';
-import { store } from './store';
-import axios from 'axios';
+import HeaderComponent from './components/HeaderComponent.vue';
 
 export default {
     components: {
-        SearchBar
-    },
-    data() {
-        return {
-            store
-        }
-    },
-    created() {
-        axios.get(store.urlApiAllFilm).then((response) => {
-            store.allFilm = response.data.results;
-        })
+        HeaderComponent
     }
 }
 </script>
 
 <template>
-    <SearchBar />
+    <HeaderComponent />
 </template>
 
 <style lang="scss">
