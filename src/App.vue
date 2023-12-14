@@ -13,6 +13,17 @@ export default {
             enFlag: { url: '../public/eng-flag.jpg', alt: 'English flag' }
         }
     },
+    methods: {
+        // funzione per stelle piene
+        returnVoteToFive(number) {
+            const x = number / 2;
+            return Math.ceil(x);
+        },
+        //funzione per stelle vuote
+        emptyStars(num) {
+            return 5 - num;
+        }
+    }
 }
 </script>
 
@@ -33,7 +44,10 @@ export default {
                     <img :src="enFlag.url" :alt="itaFlag.alt" v-else-if="film.original_language === 'en'">
                     <span v-else>{{ film.original_language }}</span>
                 </div>
-                <p>Vote: {{ film.vote_average }}</p>
+                <span>Vote:</span>
+                <font-awesome-icon icon="fa-solid fa-star" v-for="n in returnVoteToFive(film.vote_average)" />
+                <font-awesome-icon icon="fa-regular fa-star" v-for="n in emptyStars(returnVoteToFive(film.vote_average))" />
+
 
             </li>
         </ul>
