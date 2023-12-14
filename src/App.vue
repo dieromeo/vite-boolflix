@@ -12,7 +12,7 @@ export default {
             itaFlag: { url: '../public/ita-flag.jpg', alt: 'Italian flag' },
             enFlag: { url: '../public/eng-flag.jpg', alt: 'English flag' }
         }
-    }
+    },
 }
 </script>
 
@@ -22,6 +22,9 @@ export default {
         <h2>FILM</h2>
         <ul>
             <li v-for="film in store.allFilm">
+                <div class="film-image">
+                    <img :src="store.urlFilmImage + film.poster_path" alt="">
+                </div>
                 <h2>Title: {{ film.title }}</h2>
                 <h4>Original title: {{ film.original_title }}</h4>
                 <div class="language">
@@ -40,6 +43,9 @@ export default {
         <h2>TV SERIES</h2>
         <ul>
             <li v-for="serie in store.tvSeries">
+                <div class="film-image">
+                    <img :src="store.urlFilmImage + serie.poster_path" alt="">
+                </div>
                 <h2>Title: {{ serie.name }}</h2>
                 <h4>Original title: {{ serie.original_name }}</h4>
                 <div class="language">

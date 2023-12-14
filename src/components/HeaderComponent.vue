@@ -33,7 +33,7 @@ export default {
                     store.allFilm = response.data.results;
                 })
             }
-        }
+        },
     }
 }
 </script>
