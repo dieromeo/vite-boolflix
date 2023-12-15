@@ -17,4 +17,9 @@ export default {
     </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+main {
+    height: calc(100vh - 104px);
+    overflow-y: scroll;
+}
+</style>

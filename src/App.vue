@@ -27,15 +27,4 @@ export default {
 
 <style lang="scss">
 @use './style/main.scss' as *;
-
-.language {
-    display: flex;
-    align-items: center;
-
-    img {
-        display: block;
-        height: 15px;
-        margin-left: 10px;
-    }
-}
 </style>

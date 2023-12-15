@@ -37,6 +37,9 @@ export default {
             else {
                 axios.get(store.urlApiAllFilm).then((response) => {
                     store.allFilm = response.data.results;
+                });
+                axios.get(store.urlApiPopularSeries).then((response) => {
+                    store.tvSeries = response.data.results;
                 })
             }
             store.searchInput = '';
