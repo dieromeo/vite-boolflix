@@ -31,8 +31,8 @@ export default {
                 //chiamata axios per le serie tv
                 axios.get(store.urlApiTvSeries + store.searchInput).then((response) => {
                     store.tvSeries = response.data.results;
-                    console.log(store.tvSeries);
                 });
+                store.status = 'Searched';
             }
             else {
                 axios.get(store.urlApiAllFilm).then((response) => {
@@ -40,7 +40,8 @@ export default {
                 });
                 axios.get(store.urlApiPopularSeries).then((response) => {
                     store.tvSeries = response.data.results;
-                })
+                    console.log(store.tvSeries);
+                });
             }
             store.searchInput = '';
         },
