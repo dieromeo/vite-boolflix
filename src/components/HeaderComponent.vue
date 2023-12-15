@@ -1,11 +1,16 @@
 <script>
+// component import
 import SearchBar from './SearchBar.vue';
+import Logo from './Logo.vue';
+//store import
 import { store } from '../store';
+// axios import
 import axios from 'axios';
 export default {
     name: 'HeaderComponent',
     components: {
-        SearchBar
+        SearchBar,
+        Logo
     },
     data() {
         return {
@@ -16,6 +21,7 @@ export default {
         this.searchFilm();
     },
     methods: {
+        // funzione per la chimata api di film e serie
         searchFilm() {
             if (store.searchInput !== '') {
                 // chiamata axios per i film
@@ -41,6 +47,7 @@ export default {
 <template>
     <header>
         <SearchBar @generate="searchFilm" />
+        <Logo />
     </header>
 </template>
 
