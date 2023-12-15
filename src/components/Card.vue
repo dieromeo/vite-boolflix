@@ -25,7 +25,8 @@ export default {
 <template>
     <article class="col-6 col-lg-4 col-xl-3">
         <div class="film-image mb-3">
-            <img :src="immagine" alt="" class="rounded-2 shadow-lg">
+            <img :src="immagine" alt="" class="rounded-2 shadow-lg"
+                onerror="this.src='../../public/no-image-icon-23483.png'">
         </div>
         <div class="film-info">
             <h2 class="fw-bolder fs-5">Title: {{ titolo }}</h2>

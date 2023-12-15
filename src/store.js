@@ -8,5 +8,6 @@ export const store = reactive({
     urlFilmImage: 'https://image.tmdb.org/t/p/w200/',
     allFilm: [],
     searchInput: '',
-    tvSeries: []
+    tvSeries: [],
+    status: 'Popular'
 })
