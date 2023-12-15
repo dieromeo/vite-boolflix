@@ -39,16 +39,25 @@ export default {
                     store.allFilm = response.data.results;
                 })
             }
+            store.searchInput = '';
         },
     }
 }
 </script>
 
 <template>
-    <header>
-        <SearchBar @generate="searchFilm" />
-        <Logo />
+    <header class="py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <Logo />
+            <SearchBar @generate="searchFilm" />
+        </div>
     </header>
 </template>
 
-<script></script>
+<style lang="scss">
+@use '../style/partials/variables' as *;
+
+header {
+    background-color: $header-bg;
+}
+</style>

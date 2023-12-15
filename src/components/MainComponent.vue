@@ -10,7 +10,11 @@ export default {
 </script>
 
 <template>
-    <CardBoard />
+    <main class="py-4">
+        <div class="container">
+            <CardBoard />
+        </div>
+    </main>
 </template>
 
 <style lang="scss"></style>
