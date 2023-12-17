@@ -34,7 +34,7 @@ export default {
                 });
                 store.status = 'Searched'
             }
-            else {
+            else { //ritorna i popolari
                 axios.get(store.urlApiAllFilm).then((response) => {
                     store.allFilm = response.data.results;
                 });
@@ -43,6 +43,7 @@ export default {
                     console.log(store.tvSeries);
                 });
             }
+            // reset campo di ricerca
             store.searchInput = '';
         },
     }

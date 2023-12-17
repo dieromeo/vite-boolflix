@@ -15,6 +15,7 @@ export default {
 </script>
 
 <template>
+    <!-- film  -->
     <div class="film border-bottom border-4">
         <h2 class="text-center mb-4 text-uppercase">{{ store.status }} films</h2>
         <ul class="row gy-4">
@@ -23,6 +24,7 @@ export default {
                 :overview="film.overview" />
         </ul>
     </div>
+    <!-- serie tv  -->
     <div class="series">
         <h2 class="text-center my-4 text-uppercase">{{ store.status }} series</h2>
         <ul class="row gy-4">
