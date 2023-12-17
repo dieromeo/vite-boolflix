@@ -32,7 +32,7 @@ export default {
                 axios.get(store.urlApiTvSeries + store.searchInput).then((response) => {
                     store.tvSeries = response.data.results;
                 });
-                store.status = 'Searched';
+                store.status = 'Searched'
             }
             else {
                 axios.get(store.urlApiAllFilm).then((response) => {
