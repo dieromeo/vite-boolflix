@@ -13,7 +13,8 @@ export default {
 
 <template>
     <div class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" v-model="store.searchInput">
+        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" v-model="store.searchInput"
+            @keyup.enter="$emit('generate')">
         <button class="btn btn-outline-light" type="submit" @click="$emit('generate')">Search</button>
     </div>
 </template>
