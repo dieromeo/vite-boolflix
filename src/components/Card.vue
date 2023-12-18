@@ -6,7 +6,7 @@ export default {
         return {
             itaFlag: { url: '../ita-flag.jpg', alt: 'Italian flag' },
             enFlag: { url: '../eng-flag.jpg', alt: 'English flag' },
-            overStatus: 'd-none'
+            overStatus: 'opacity-0'
         }
     },
     methods: {
@@ -21,10 +21,10 @@ export default {
         },
         //funzione per mostrare info 
         changeInfoStatus() {
-            if (this.overStatus === 'd-none') {
-                this.overStatus = 'd-block';
+            if (this.overStatus === 'opacity-0') {
+                this.overStatus = 'opacity-100';
             } else {
-                this.overStatus = 'd-none'
+                this.overStatus = 'opacity-0'
             }
         }
     }
@@ -78,6 +78,10 @@ export default {
 
     .overview-container {
         font-size: 14px;
+    }
+
+    .film-info {
+        transition: all 0.3s;
     }
 
 }
