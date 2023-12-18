@@ -27,12 +27,17 @@ export default {
                 // chiamata axios per i film
                 axios.get(store.urlApiSearchFilm + '&query=' + store.searchInput).then((response) => {
                     store.allFilm = response.data.results;
+                    if (store.allFilm.length === 0 & store.tvSeries.length === 0) {
+                        store.status = 'No'
+                    } else {
+                        store.status = 'Searched'
+                    }
                 });
+
                 //chiamata axios per le serie tv
                 axios.get(store.urlApiTvSeries + store.searchInput).then((response) => {
                     store.tvSeries = response.data.results;
                 });
-                store.status = 'Searched'
             }
             else { //ritorna i popolari
                 axios.get(store.urlApiAllFilm).then((response) => {
@@ -40,7 +45,6 @@ export default {
                 });
                 axios.get(store.urlApiPopularSeries).then((response) => {
                     store.tvSeries = response.data.results;
-                    console.log(store.tvSeries);
                 });
             }
             // reset campo di ricerca
